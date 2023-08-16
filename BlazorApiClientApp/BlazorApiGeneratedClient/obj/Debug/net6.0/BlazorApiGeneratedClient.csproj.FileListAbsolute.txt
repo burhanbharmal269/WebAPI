@@ -1,0 +1,2 @@
+D:\Training 2023\WebAPI\BuildingAPI\BlazorApiClientApp\BlazorApiGeneratedClient\obj\Debug\net6.0\BlazorApiGeneratedClient.csproj.AssemblyReference.cache
+D:\Training 2023\WebAPI\BuildingAPI\BlazorApiClientApp\BlazorApiGeneratedClient\obj\Debug\net6.0\BlazorApiGeneratedClient.GeneratedMSBuildEditorConfig.editorconfig

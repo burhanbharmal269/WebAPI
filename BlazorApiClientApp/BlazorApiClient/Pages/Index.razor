@@ -1,0 +1,71 @@
+﻿@page "/"
+@using System.Net.Http.Json
+@inject IHttpClientFactory factory
+@inject TokenModel tokenInfo
+
+<PageTitle>Index</PageTitle>
+@if (isLoggedIn)
+{
+ <h1>You are Logged In!</h1>
+ <button class="btn btn-danger" @onclick="LogOut">Log Out</button>
+}
+else
+{
+    <h1>Please Login</h1>
+
+    <h1>Login Page</h1>
+
+    <EditForm Model="login" OnValidSubmit="HandleValidSubmit">
+        <InputText @bind-Value="login.UserName" /><br /><br />
+        <InputText type="password" @bind-Value="login.Password" /><br /><br />
+
+        <button class="btn btn-success" type="submit">Log in</button>
+    </EditForm>
+
+}
+@if (string.IsNullOrWhiteSpace(errorMessage) == false)
+{
+    <div class="h3 text-danger">@errorMessage</div>
+}
+
+
+@code{
+    private AuthenticationModel login = new();
+    private bool isLoggedIn = false;
+    private string? errorMessage;
+
+    protected override void OnInitialized()
+    {
+        isLoggedIn = !string.IsNullOrWhiteSpace(tokenInfo.Token);
+    }
+
+    private async void HandleValidSubmit()
+    {
+        errorMessage = "";
+        var client = factory.CreateClient("api");
+
+        var info = await client.PostAsJsonAsync<AuthenticationModel>("Authentication/token", login);
+        tokenInfo.Token = await info.Content.ReadAsStringAsync();
+
+        if(info.IsSuccessStatusCode == true)
+        {
+            isLoggedIn = true;
+            await InvokeAsync(StateHasChanged);
+        }
+        else
+        {
+            errorMessage = "Invalid Credentials";
+            await InvokeAsync(StateHasChanged);
+        }
+
+        
+    }
+
+    private void LogOut()
+    {
+        tokenInfo.Token = "";
+        isLoggedIn = false;
+   
+    }
+}
+

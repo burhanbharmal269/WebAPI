@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "dG+bJWkAtpgO3fUxtnsMj0O8oZXWWA9gUrX+5hyaM8T+EE0WjsYaDHnBtgSoA7jXQlSmqoT5txa45tAfTaHAmw==",
+  "success": true,
+  "projectFilePath": "D:\\Training 2023\\WebAPI\\BuildingAPI\\BlazorApiClientApp\\BlazorApiGeneratedClient\\BlazorApiGeneratedClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Burhan.Bharmal\\.nuget\\packages\\microsoft.extensions.apidescription.client\\3.0.0\\microsoft.extensions.apidescription.client.3.0.0.nupkg.sha512",
+    "C:\\Users\\Burhan.Bharmal\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Burhan.Bharmal\\.nuget\\packages\\nswag.apidescription.client\\13.0.5\\nswag.apidescription.client.13.0.5.nupkg.sha512",
+    "C:\\Users\\Burhan.Bharmal\\.nuget\\packages\\nswag.msbuild\\13.0.5\\nswag.msbuild.13.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
